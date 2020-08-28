@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Load" Margin="3" Click="Button_Click"></Button>
+        </StackPanel>
+
+        <!--<GridView>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ID}"></TextBlock>
+                        <TextBlock Text="{Binding Nome}"></TextBlock>
+                        <TextBlock Text="{Binding Cognome}"></TextBlock>
+                        <TextBlock Text="{Binding Reddito}"></TextBlock>
+                    </StackPanel>                    
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>-->
+
+        <GridView  x:Name="dgDati" Grid.Row="1">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Padding="12" Orientation="Horizontal">
+                        <!--<FontIcon Margin="0,6,0,0" FontSize="48" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" Glyph="{Binding Glyph}" VerticalAlignment="Top"/>-->
+                        <FontIcon Margin="0,6,0,0" FontSize="48" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" Glyph="&#xE8F1;" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <!--<FontIcon Margin="0,6,0,0" FontSize="48" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" Glyph="&#xE9F5;" VerticalAlignment="Top"/>-->
+                        <StackPanel Margin="10,0,0,0" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="0,0,10,0" FontSize="20" HorizontalAlignment="Left" Text="{Binding Nome}" />
+                                <TextBlock FontSize="20" HorizontalAlignment="Left" Text="{Binding Cognome}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock HorizontalAlignment="Left" Text="Id: "/>
+                                <TextBlock Margin="0,0,10,0" HorizontalAlignment="Left" Text="{Binding ID}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="Reddito: " />
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding Reddito}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Page>
